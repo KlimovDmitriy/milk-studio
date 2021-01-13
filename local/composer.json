@@ -1,0 +1,11 @@
+{
+    "require": {
+        "msvdev/bitrix-extension-view": "^1.0.2",
+        "msvdev/bitrix-extension-forms": "^1.0",
+        "arrilot/bitrix-migrations": "^2.6"    },
+    "autoload": {
+        "psr-4": {
+            "Project\\Events\\": "php_interface/project/events"
+        }
+    }
+}
