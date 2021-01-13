@@ -1,0 +1,14 @@
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.s8{
+    margin-top: 90px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.s8 a{
+    margin-left: auto;
+    margin-right: auto;
+}

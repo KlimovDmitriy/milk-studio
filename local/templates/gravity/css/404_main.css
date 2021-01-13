@@ -1,0 +1,1045 @@
+@font-face {
+  font-family: "TT Commons";
+  font-weight: 400;
+  font-style: normal;
+  src: local("TT Commons-Regular"), local("TT Commons Regular"),
+    url("../fonts/ttcommons/TTCommons-Regular.woff2") format("woff2"),
+    url("../fonts/ttcommons/TTCommons-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Five Years Later";
+  font-weight: 400;
+  font-style: normal;
+  src: local("Five Years Later-Regular"), local("Five Years Later Regular"),
+    url("../fonts/five-years-later/Five Years Later.woff2") format("woff2"),
+    url("../fonts/five-years-later/Five Years Later.woff") format("woff");
+}
+
+.section .container {
+  max-width: 1174px;
+  padding: 40px 20px 0;
+  margin: 0 auto;
+}
+
+.section_title {
+  font-size: 34px;
+  font-family: "Five Years Later";
+  color: #333333;
+  line-height: 40px;
+}
+
+.section_title span {
+  display: block;
+}
+
+.section img {
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  top: -20px;
+}
+
+.section_subtitle {
+  color: #9cafbb;
+  font-family: "Five Years Later";
+  font-size: 19px;
+  line-height: 30px;
+}
+
+.section_subtitle span {
+  display: block;
+}
+
+.to_main {
+  background-color: #07569e;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+.nav_submenu_trigger a {
+  color: #ffffff;
+  text-decoration: none;
+}
+@media screen and (min-width: 800px) {
+  .section .container {
+    padding: 100px 20px;
+  }
+
+  .section_title {
+    font-size: 36px;
+  }
+
+  .section .flex_container {
+    display: flex;
+  }
+
+  .section .flex_container.flex_container_row {
+    align-items: center;
+  }
+
+  .section .flex_container.flex_container_column {
+    flex-direction: column;
+    order: -1;
+  }
+
+  .section img {
+    position: relative;
+    top: -40px;
+    margin-left: 20px;
+  }
+
+  .section_subtitle {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  .section_subtitle span {
+    display: block;
+  }
+
+  .section .to_main {
+    margin-bottom: 0;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .section .container {
+    padding: 150px 20px;
+  }
+
+  .section_title {
+    font-size: 52px;
+  }
+
+  .section_title span {
+    display: inline;
+  }
+
+  .section img {
+    width: 55%;
+    max-width: 750px;
+    position: relative;
+    top: -60px;
+    margin-left: 30px;
+  }
+
+  .section_subtitle {
+    font-size: 24px;
+  }
+
+  .section .to_main {
+    margin-bottom: 0;
+    margin-top: 50px;
+  }
+}
+
+/* Popup result form send */
+.popup_success {
+  display: none;
+}
+.popup_success.active {
+  display: block;
+}
+.popup {
+  z-index: 1000;
+}
+.popup_success .popup {
+  max-width: 350px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.popup_success .popup,
+.popup_success .popup_overlay {
+  display: block;
+}
+.popup_overlay {
+  z-index: 999;
+}
+.popup_success .popup_wrapper,
+.popup .content {
+  z-index: 1000;
+}
+.popup_success #note {
+  color: #ffffff;
+  font-family: "TT Commons";
+  font-size: 18px;
+}
+.popup_success .popup_header {
+  width: 100%;
+  height: 200px;
+  background-image: url("../img/popup_success_header.svg");
+  background-size: cover;
+}
+.popup_success_title {
+  width: 100%;
+  color: #dab564;
+  font-size: 36px;
+  font-family: "Five Years Later";
+}
+.popup_success #note {
+  margin-top: 40px;
+  color: #333333;
+  font-size: 24px;
+  font-family: "Five Years Later";
+  line-height: 1.3;
+}
+.popup_success .success_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 330px;
+  background-color: #ffffff;
+  padding: 20px;
+}
+.popup_success button.success_button_close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-image: url("../img/popup_close_button_white.svg");
+  border: none;
+  background-color: transparent;
+}
+/* Popup result form send */
+* {
+  box-sizing: border-box;
+}
+.header {
+  width: 100%;
+}
+.top_header {
+  width: 100%;
+  background-color: #07569e;
+}
+.top_header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+  padding: 0 20px;
+  max-width: 1174px;
+  margin: 0 auto;
+}
+.top_header .container {
+  max-width: 1174px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.header .container {
+  padding-bottom: 80px;
+}
+.menu_trigger_open {
+  position: relative;
+  width: 28px;
+  height: 14px;
+}
+.menu_trigger_open::before,
+.menu_trigger_open::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  background-color: #dab564;
+}
+.menu_trigger_open::before {
+  left: 0;
+  top: 0;
+  right: 0;
+}
+.menu_trigger_open::after {
+  left: 0;
+  bottom: 0;
+  width: 70%;
+}
+.desktop_logo {
+  display: none;
+}
+.phone {
+  font-family: "TT Commons";
+  font-size: 14px;
+  text-decoration: none;
+}
+.header_phone {
+  color: #ffffff;
+}
+.menu_container {
+  position: absolute;
+  width: 100%;
+  left: -100%;
+  top: 60px;
+  padding: 10px 20px 80px;
+  background-color: #07569e;
+  transition: left 0.5s;
+  z-index: 1;
+}
+.menu_container.active {
+  left: 0;
+}
+.menu_trigger_close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+}
+.menu_trigger_close::before,
+.menu_trigger_close::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: 50%;
+  background-color: #ffffff;
+}
+.menu_trigger_close::before {
+  transform: rotate(45deg);
+}
+.menu_trigger_close::after {
+  transform: rotate(-45deg);
+}
+.nav_list_link,
+.nav_submenu_trigger {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: "TT Commons";
+  font-size: 17px;
+}
+.nav_list_item {
+  margin-top: 20px;
+}
+.nav_list_link:hover {
+  color: #dab564;
+}
+.nav_submenu {
+  display: none;
+  padding-left: 20px;
+}
+.nav_submenu.active {
+  display: block;
+}
+.nav_submenu_link {
+  font-size: 16px;
+}
+.button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-family: "Five Years Later";
+  font-size: 18px;
+  border: none;
+  border-radius: 150px;
+  margin-top: 20px;
+  outline: none;
+}
+.sign_up {
+  background-color: #ffffff;
+  color: #07569e;
+}
+/* -------------------------------------------- */
+.header {
+  position: relative;
+}
+
+.header_button {
+  color: #07569e;
+  background-color: #ffffff;
+  margin-top: 40px;
+}
+.input {
+  outline: none;
+}
+.form .paragraph {
+  font-size: 14px;
+  letter-spacing: 0.2;
+}
+.input[type="text"],
+.input[type="date"],
+.input[type="time"] {
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #9cafbb;
+  font-size: 18px;
+  font-family: "TT Commons";
+  padding: 3px 0;
+  margin-top: 15px;
+}
+.input[type="text"]::placeholder,
+.input[type="date"]::placeholder,
+.input[type="time"]::placeholder {
+  color: #9cafbb;
+}
+.input[type="text"]:first-child,
+.input[type="date"]:first-child,
+.input[type="time"]:first-child {
+  margin-top: 0;
+}
+.input[type="text"].marked::placeholder,
+.input[type="date"].marked::placeholder,
+.input[type="time"].marked::placeholder {
+  color: #07569e;
+}
+.input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+.check {
+  position: relative;
+}
+.check .checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 24px;
+  height: 24px;
+}
+.check .checkbox:checked ~ label::before {
+  background-color: #07569e;
+  background-image: url("../img/сhecked.png");
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-color: #07569e;
+}
+.check label {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 17px;
+  color: #bdbdbd;
+  cursor: pointer;
+  font-family: "TT Commons";
+}
+.check label::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  border: 2px solid #9cafbb;
+  min-width: 24px;
+  margin-right: 20px;
+}
+.check label .link {
+  display: block;
+  color: #07569e;
+}
+.form_button {
+  background-color: #07569e;
+  color: #ffffff;
+  transition: color 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+.form_button:hover {
+  background-color: #ffffff;
+  color: #07569e;
+}
+.form_button:disabled {
+  background-color: #9cafbb;
+}
+.form_button:disabled:hover {
+  color: #ffffff;
+}
+.next_step {
+  transition: color 0.3s, background-color 0.3s;
+  background-color: #07569e;
+  color: #ffffff;
+}
+.next_step:hover {
+  color: #07569e;
+  background-color: #ffffff;
+}
+.next_step:disabled {
+  background-color: #9cafbb;
+}
+.next_step:disabled:hover {
+  color: #ffffff;
+}
+.popup .check {
+  margin-top: 20px;
+}
+/* -------------------------------------------- */
+.footer {
+  background-color: #282828;
+}
+.footer .container {
+  padding: 20px 20px 21px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.row_1 {
+  align-items: center;
+}
+.col {
+  width: 45%;
+}
+.to_start {
+  position: relative;
+  color: #f2f2f2;
+  font-family: "Five Years Later";
+  font-size: 14px;
+  text-align: left;
+}
+.to_start::before {
+  content: "";
+  position: absolute;
+  width: 21px;
+  height: 16px;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("../img/arrow_top.png");
+  background-size: cover;
+}
+.desktop_footer {
+  display: none;
+}
+.row_2 {
+  margin-top: 30px;
+}
+.footer_col_title {
+  color: #f2f2f2;
+  font-family: "Five Years Later";
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.footer_col_link {
+  display: block;
+  text-decoration: none;
+  color: #f2f2f2;
+  font-family: "TT Commons";
+  font-size: 9px;
+  margin-top: 15px;
+}
+.footer_col_link:first-of-type {
+  margin-top: 20;
+  background-color: transparent;
+}
+.search_field {
+  position: relative;
+}
+.search_icon {
+  position: absolute;
+  top: 28px;
+  right: 15px;
+  background-color: transparent;
+  background-image: url("../img/search_icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  width: 13px;
+  height: 10px;
+  background-size: cover;
+  outline: none;
+}
+.footer_search {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #bdbdbd;
+  margin-top: 20px;
+  height: 30px;
+  font-family: "TT Commons";
+  font-size: 10px;
+  padding-left: 10px;
+  outline: none;
+  color: #bdbdbd;
+}
+.footer_search::placeholder {
+  color: #bdbdbd;
+}
+.footer_phone {
+  color: #f2f2f2;
+}
+.address {
+  display: block;
+  margin-top: 15px;
+  color: #f2f2f2;
+  font-family: "TT Commons";
+  font-size: 11px;
+  line-height: 1.5;
+}
+.socials {
+  margin-top: 20px;
+}
+.social {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  margin-left: 20px;
+}
+.social:first-child {
+  margin-left: 0;
+}
+.popup_overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  width: 90%;
+  max-width: 350px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+}
+.content .button_close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-image: url("../img/popup_close.png");
+  background-color: transparent;
+  border: none;
+}
+.content .popup_title {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 24px;
+  font-family: "Five Years Later";
+  line-height: 1.3;
+  color: #ffffff;
+  text-align: center;
+  padding: 0;
+  background-size: cover;
+  background-image: url("../img/popup_background.png");
+}
+.content .popup_title span {
+  text-align: center;
+  display: block;
+}
+.content .popup_subtitle {
+  padding-top: 20px;
+  font-size: 24px;
+  color: #333333;
+  font-family: "Five Years Later";
+  text-align: center;
+}
+.content .input:first-of-type {
+  margin-top: 37px;
+}
+.popup .content,
+.popup_success .popup {
+  width: 90%;
+}
+.popup {
+  display: none;
+}
+.popup.active {
+  display: block;
+}
+.popup .wrapper {
+  padding: 20px;
+}
+@media screen and (min-width: 700px) {
+  /* Popup result form send */
+  .popup_success {
+    width: auto;
+  }
+  .popup_success .popup {
+    width: auto;
+    display: flex;
+    max-width: 700px;
+  }
+  .popup_success #note {
+    font-size: 20px;
+  }
+  .popup_success .popup_header {
+    width: 600px;
+    height: auto;
+    background-size: cover;
+  }
+  .popup_success_title {
+    width: 100%;
+    color: #dab564;
+    font-size: 36px;
+    font-family: "Five Years Later";
+  }
+  .popup_success .success_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 560px;
+    padding: 20px;
+  }
+  .popup_success button.success_button_close {
+    background-image: url("../img/popup_close_button_blue.svg");
+    cursor: pointer;
+  }
+  /* Popup result form send */
+  .header_phone {
+    font-size: 16px;
+  }
+  .nav_submenu_trigger {
+    cursor: pointer;
+  }
+  .nav_submenu_trigger:hover {
+    color: #dab564;
+  }
+  .nav_list_item {
+    margin-top: 20px;
+  }
+  .nav_list_link:hover {
+    color: #dab564;
+  }
+  .popup .content {
+    flex-direction: row;
+    max-width: 700px;
+  }
+  .content .popup_title {
+    padding: 20px;
+    font-size: 32px;
+    width: 600px;
+    height: auto;
+  }
+  .popup .wrapper {
+    width: auto;
+  }
+  .popup .button_close {
+    background-image: url("../img/big_popup_close.png");
+    cursor: pointer;
+  }
+  /* ----------------------------------------- */
+  .to_start {
+    font-size: 16px;
+  }
+  .footer_col_title {
+    font-size: 16px;
+  }
+  .footer_col_link {
+    font-size: 11px;
+  }
+  .footer_search {
+    font-size: 11px;
+  }
+  .search_icon {
+    cursor: pointer;
+  }
+  .address {
+    font-size: 12px;
+  }
+  .social {
+    width: 24px;
+    height: 24px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  /* Popup result form send */
+  .popup_success .popup {
+    width: 90%;
+    max-width: 900px;
+  }
+  .popup_success #note {
+    font-size: 20px;
+  }
+  .popup_success .popup_header {
+    width: 50%;
+    height: 380px;
+    background-position: -70px;
+  }
+  .popup_success .success_wrapper {
+    height: 380px;
+    width: 50%;
+    padding: 20px;
+  }
+  /* Popup result form send */
+  .content .popup_title {
+    height: auto;
+  }
+  .mobile_logo {
+    display: none;
+  }
+  .desktop_logo {
+    display: block;
+  }
+  .top_header_container {
+    height: 106px;
+  }
+  .menu_trigger_open {
+    display: none;
+  }
+  .phone {
+    font-size: 18px;
+    color: #ffffff;
+    order: 1;
+  }
+  .menu_container {
+    width: auto;
+    padding: 0;
+    position: static;
+    background-color: transparent;
+  }
+  .menu_trigger_close {
+    display: none;
+  }
+  .nav_list {
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .nav_list_link {
+    display: inline;
+  }
+  .nav_submenu_trigger {
+    position: relative;
+    cursor: pointer;
+  }
+  .nav_submenu_trigger::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 70px;
+    width: 100%;
+  }
+  .nav_submenu_trigger:hover {
+    color: #dab564;
+  }
+  .nav_submenu_trigger:hover .nav_submenu {
+    display: block;
+  }
+  .nav_list_item {
+    margin-top: 0;
+    margin-left: 40px;
+  }
+  .nav_list_link:hover {
+    color: #dab564;
+  }
+  .nav_submenu {
+    width: 220px;
+    left: -25px;
+    top: 60px;
+    display: none;
+    position: absolute;
+    padding-left: 0;
+    background-color: #07569e;
+    padding: 10px 0;
+  }
+  .nav_submenu_item {
+    margin-left: 0;
+    padding: 10px;
+  }
+  .nav_submenu_link {
+    font-size: 18px;
+  }
+  .button {
+    width: 320px;
+    padding: 12px;
+    margin-top: 60px;
+  }
+  .sign_up {
+    display: none;
+  }
+  /* -------------------------------------------- */
+  .header_title {
+    font-size: 70px;
+  }
+  .header_subtitle {
+    font-size: 30px;
+    line-height: 1.5;
+  }
+  .header_subtitle span {
+    display: block;
+  }
+  .header_button {
+    margin-top: 80px;
+    transition: color 0.3s, background-color 0.3s;
+    cursor: pointer;
+  }
+  .header_button:hover {
+    color: #ffffff;
+    background-color: #07569e;
+  }
+  .form {
+    width: 60%;
+    margin-top: 0;
+  }
+  .form .option {
+    position: relative;
+    margin-top: 15px;
+  }
+  .form .option::before {
+    content: "";
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    width: 18px;
+    height: 10px;
+    background-image: url("../img/list_item_arrow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .form p.wrap {
+    width: 47%;
+    display: inline-block;
+  }
+  .form p.wrap:nth-child(2n) {
+    margin-left: 20px;
+  }
+  .form div.wrap {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .form_button {
+    width: 47%;
+    margin-right: 20px;
+    margin-top: 0;
+  }
+  div.option_select {
+    width: 47%;
+  }
+  .popup_overlay {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .popup {
+    width: auto;
+    max-width: 900px;
+  }
+  .popup .popup_title {
+    width: 50%;
+    font-size: 34px;
+    padding: 0;
+    background-position: 60%;
+    height: 380px;
+  }
+  .popup .wrapper {
+    padding: 20px;
+    width: 50%;
+  }
+  .popup .popup_subtitle {
+    font-size: 32px;
+    text-align: left;
+  }
+  .popup .step {
+    font-size: 22px;
+  }
+  .popup .next_step {
+    width: 100%;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .popup .content {
+    max-width: 900px;
+  }
+  /* -------------------------------------------- */
+  .footer {
+    background-color: #282828;
+  }
+  .footer .container {
+    padding: 77px 20px 65px;
+    max-width: 1174px;
+    margin: 0 auto;
+  }
+  .mobile_footer {
+    display: none;
+  }
+  .desktop_footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer_desktop_logo {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo_title {
+    color: #ffffff;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: "TT Commons";
+    margin-top: 10px;
+    letter-spacing: 1.2;
+  }
+  .search_icon {
+    position: absolute;
+    top: 63px;
+    right: 18px;
+    cursor: pointer;
+  }
+  .footer_search {
+    margin-top: 55px;
+    font-size: 12px;
+    height: 31px;
+  }
+  .col_2 {
+    margin-left: 200px;
+  }
+  .footer_col_title {
+    color: #f2f2f2;
+    font-size: 18px;
+  }
+  .footer_nav_list_item {
+    margin-top: 7px;
+  }
+  .footer_nav_list_item:first-child {
+    margin-top: 0;
+  }
+  .col_3 {
+    margin-left: 35px;
+  }
+  .footer_nav_list_link {
+    text-decoration: none;
+    color: #f2f2f2;
+    font-family: "TT Commons";
+    font-size: 12px;
+  }
+  .footer_nav_list_link:hover {
+    color: #dab564;
+  }
+  .footer_col_link {
+    font-size: 12px;
+  }
+  .footer_col_link:first-of-type {
+    background-color: transparent;
+  }
+  .footer_phone {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+  .address {
+    margin-top: 15px;
+    font-size: 12px;
+  }
+  .socials {
+    margin-top: 20px;
+  }
+  .social {
+    display: inline-block;
+    background-size: cover;
+    margin-left: 25px;
+  }
+  .social:first-child {
+    margin-left: 0;
+  }
+}
