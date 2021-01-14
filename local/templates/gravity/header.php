@@ -38,7 +38,7 @@
                         <img src="<?= SITE_TEMPLATE_PATH; ?>/markup/img/logo.png" alt="Логотип">
                     </div>
                 </a>
-                <button><a href="/?logout=yes">Выйти</a>
+                <button type="button" class="btn btn-danger text-white"><a href="/?logout=yes" class="text-white">Выйти</a>
                 </button>
 
             </div>
