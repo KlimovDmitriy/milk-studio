@@ -1,18 +1,5 @@
 $(document).ready(function () {
-    var menuOpen = document.querySelector("#menu_trigger_open");
-    var menuClose = document.querySelector("#menu_trigger_close");
-    var menu = document.querySelector("#mobile_menu");
-    menuOpen.addEventListener("click", toggleMenu);
-    menuClose.addEventListener("click", closeMenu);
 
-    function toggleMenu() {
-        menu.classList.toggle("active");
-        if (menu.classList.contains("active")) {
-            document.body.style.overflow = "auto";
-        } else {
-            document.body.style.overflow = "auto";
-        }
-    }
 
     function closeMenu() {
         menu.classList.remove("active");

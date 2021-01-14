@@ -21,19 +21,8 @@
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/magnific-popup.css'); ?>
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/responsive.css'); ?>
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/selectric.css'); ?>
-    <? $APPLICATION->AddHeadScript("https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"); ?>
-    <? $APPLICATION->AddHeadScript("https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"); ?>
-    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.bxslider.min.js"); ?>
-    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.fancybox.min.js"); ?>
-    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.inputmask.min.js"); ?>
-    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.scrollTo.min.js"); ?>
-    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.nicescroll.min.js"); ?>
-    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/cookie.js"); ?>
-    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/slick.min.js"); ?>
-    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.selectric.min.js"); ?>
-    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/custom.js"); ?>
-    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery.magnific-popup.min.js"); ?>
-    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/main.js"); ?>
+    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery-3.5.1.min.js"); ?>
+    <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/bootstrap.js"); ?>
 </head>
 <body>
 <? if ($USER->IsAuthorized()): ?>

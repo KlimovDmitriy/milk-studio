@@ -1,7 +1,8 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 ?>
-<?$APPLICATION->IncludeComponent(
+
+<? $APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"models", 
 	array(
@@ -29,8 +30,10 @@ require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
 		"DETAIL_PROPERTY_CODE" => array(
-			0 => "MODEL_ID",
-			1 => "",
+			0 => "NOTES",
+			1 => "LOGINS",
+			2 => "MODEL_ID",
+			3 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
@@ -49,8 +52,10 @@ require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 			1 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
-			0 => "MODEL_ID",
-			1 => "",
+			0 => "NOTES",
+			1 => "LOGINS",
+			2 => "MODEL_ID",
+			3 => "",
 		),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
@@ -91,7 +96,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 		)
 	),
 	false
-);?>
+); ?>
 <?
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
 ?>
