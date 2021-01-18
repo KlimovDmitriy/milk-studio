@@ -1,8 +1,15 @@
 <?php
+$el = CIBlockElement::GetList(
+    array(),
+    array("IBLOCK_ID"=>"17","PROPERTY_MODEL_ID.ID" => 2)
+);
+$el1 = GetIBlockElementList(17, false, Array(), 0, array("PROPERTY_MODEL_ID" => 2));
+while($e = $el1->GetNext()){
+    echo "<pre>";
+    print_r($e);
+    echo "</pre>";
+}
 ?>
-<!--<pre>-->
-<!--    --><?// print_r($arResult['PROPERTIES'])?>
-<!--</pre>-->
 <div class="row">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
