@@ -14,13 +14,8 @@
           rel="stylesheet">
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/bootstrap.min.css'); ?>
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/bootstrap-grid.css'); ?>
-    <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/jquery.fancybox.css'); ?>
-    <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/jquery.bxslider.css'); ?>
-    <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/slick.css'); ?>
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/style.css'); ?>
-    <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/magnific-popup.css'); ?>
     <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/responsive.css'); ?>
-    <? $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/selectric.css'); ?>
     <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery-3.5.1.min.js"); ?>
     <? $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/bootstrap.js"); ?>
 </head>
