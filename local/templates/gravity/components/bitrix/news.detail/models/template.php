@@ -1,10 +1,3 @@
-<?php
-//
-//    echo "<pre>";
-//    print_r($arResult);
-//    echo "</pre>";
-//
-//?>
 <div class="row">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -20,7 +13,61 @@
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="logins" role="tabpanel"
          aria-labelledby="home-tab">
-        <div class="row "><?= $arResult['PROPERTIES']['LOGINS']['~VALUE']['TEXT']; ?></div>
+        <div class="row">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Сайт
+                    </th>
+                    <th>
+                        Логин
+                    </th>
+                    <th>
+                        Пароль
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($arResult['LOGINS'] as $login): ?>
+                    <tr>
+                        <td>
+                            <?= $login['UF_SITE'] ?>
+                        </td>
+                        <td>
+                            <?= $login['UF_LOGIN'] ?>
+                        </td>
+                        <td>
+                            <?= $login['UF_PASSWORD'] ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="btn btn-danger" id="add-login">Добавить логин</div>
+        </div>
+        <div class="row mt-4" id="login-form" style="display: none">
+            <form class="d-flex align-items-end" id="add-login-form">
+                <input type="hidden" name="model-id" value="<?=$arResult['ID']?>">
+                <div class="form-group mr-3">
+                    <label for="site">Сайт</label>
+                    <input type="text" class="form-control" name="site"/>
+                </div>
+                <div class="form-group mr-3">
+                    <label for="login">Логин</label>
+                    <input type="text" class="form-control" name="login"/>
+                </div>
+                <div class="form-group mr-3">
+                    <label for="password">Пароль</label>
+                    <input type="text" class="form-control" name="password"/>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-warning" id="login-submit">Сохранить</button>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="tab-pane fade" id="notes" role="tabpanel"
          aria-labelledby="profile-tab">
