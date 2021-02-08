@@ -45,9 +45,11 @@
                 </tbody>
             </table>
         </div>
+        <? if ($USER->GetID() == 1):?>
         <div class="row">
             <div class="btn btn-danger" id="add-login">Добавить логин</div>
         </div>
+        <? endif ?>
         <div class="row mt-4" id="login-form" style="display: none">
             <form class="d-flex align-items-end" id="add-login-form">
                 <input type="hidden" name="model-id" value="<?=$arResult['ID']?>">
