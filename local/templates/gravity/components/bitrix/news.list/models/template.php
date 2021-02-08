@@ -7,7 +7,10 @@ $userId = $USER->GetID();
 <?php foreach ($arResult['ITEMS'] as $arItem): ?>
     <?php
     if ($userId == '1' || $arItem['PROPERTIES']['MODEL_ID']['VALUE'] == $userId):?>
-        <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><?=$arItem['NAME']?><span class="btn btn-danger float-right d">Деактивировать</span></a>
+        <a href="<?=$arItem['DETAIL_PAGE_URL']?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><?=$arItem['NAME']?>
+            <? if ($USER->GetID() == 1):?>
+            <span class="btn btn-danger float-right d">Деактивировать</span>
+            <? endif ?></a>
     <?php endif;?>
 <?php endforeach; ?>
 </div>
