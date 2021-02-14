@@ -49,4 +49,18 @@ $(document).ready(function(){
             }
         })
     })
+
+    $("#update-salary").click(function (){
+        var salary = $(this).parents('tbody').find("input[name='salary']").val();
+        var goal = $(this).parents('tbody').find("input[name='goal']").val();
+        var id = $(this).parents('tbody').find("input[name='id']").val();
+        $.ajax({
+            url: '/ajax/update-salary.php',
+            type: 'POST',
+            data: {salary: salary, goal: goal, id: id},
+            success: function (){
+                location.reload()
+            }
+        })
+    })
 })

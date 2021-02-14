@@ -33,8 +33,8 @@
                         <img src="<?= SITE_TEMPLATE_PATH; ?>/images/aurum.jpg" alt="Логотип">
                     </div>
                 </a>
-                <button type="button" class="btn btn-danger text-white"><a href="/?logout=yes" class="text-white">Выйти</a>
-                </button>
+                <a href="/?logout=yes" class="btn btn-danger text-white">Выйти
+                </a>
 
             </div>
         </div>

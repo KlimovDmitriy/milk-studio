@@ -1,4 +1,5 @@
 <?php
+
 $userId = $USER->GetID();
 $userGroup = CUser::GetUserGroup($userId);
 ?>
@@ -18,6 +19,7 @@ $userGroup = CUser::GetUserGroup($userId);
     <div class="tab-pane fade show active" id="logins" role="tabpanel"
          aria-labelledby="home-tab">
         <div class="row login-table">
+            <h2>Логины:</h2>
             <table class="table table-bordered table-striped ">
                 <thead class="thead-dark">
                 <tr>
@@ -71,16 +73,20 @@ $userGroup = CUser::GetUserGroup($userId);
             foreach ($arResult['LOGINS'] as $login): ?>
                 <div class="row mt-1">
                     <form class="w-100">
-                        <input type="hidden" name="id" value="<?= $login['ID']?>">
+                        <input type="hidden" name="id" value="<?= $login['ID'] ?>">
                         <div class="row">
                             <div class="col-md-3">
-                                <input class="form-control" type="text" name="site" placeholder="Введите ник модели:" value="<?= $login['UF_SITE'] ?>">
+                                <input class="form-control" type="text" name="site" placeholder="Введите ник модели:"
+                                       value="<?= $login['UF_SITE'] ?>">
                             </div>
                             <div class="col-md-3">
-                                <input class="form-control" type="text" name="login" placeholder="Введите ник модели:" value="<?= $login['UF_LOGIN'] ?>">
+                                <input class="form-control" type="text" name="login" placeholder="Введите ник модели:"
+                                       value="<?= $login['UF_LOGIN'] ?>">
                             </div>
                             <div class="col-md-3">
-                                <input class="form-control" type="text" name="password" placeholder="Введите ник модели:" value="<?= $login['UF_PASSWORD'] ?>">
+                                <input class="form-control" type="text" name="password"
+                                       placeholder="Введите ник модели:"
+                                       value="<?= $login['UF_PASSWORD'] ?>">
                             </div>
                             <div class="col-md-1">
                                 <div class="btn btn-success update-login">Обновить</div>
@@ -121,6 +127,44 @@ $userGroup = CUser::GetUserGroup($userId);
                     <button type="submit" class="btn btn-warning" id="login-submit">Сохранить</button>
                 </div>
             </form>
+        </div>
+        <div class="row mt-4">
+            <h2>Заработок:</h2>
+            <table class="table table-bordered table-striped">
+                <tbody>
+                <input type="hidden" name='id' value="<?= $arResult['ID'] ?>"/>
+                <tr>
+                    <td>Цель</td>
+                    <td><?php
+                        if (in_array(6, $userGroup)): ?>
+                            <input type="text" name='goal' value="<?= $arResult['PROPERTIES']['GOAL']['VALUE'] ?>">
+                        <?php
+                        else: ?>
+                            <?= $arResult['PROPERTIES']['GOAL']['VALUE'] ?>
+                        <?php
+                        endif ?></td>
+                    <td>Заработок по <?= $arResult['PROPERTIES']['DATE_UPDATE']['VALUE'] ?></td>
+                    <td>
+                        <?php
+                        if (in_array(6, $userGroup)): ?>
+                            <input type="text" name='salary' value="<?= $arResult['PROPERTIES']['SALARY']['VALUE'] ?>">
+                        <?php
+                        else: ?>
+                            <?= $arResult['PROPERTIES']['SALARY']['VALUE'] ?>
+                        <?php
+                        endif ?></td>
+                </tr>
+                <?php
+                if (in_array(6, $userGroup)): ?>
+                    <tr class="" id="update-salary">
+                        <td colspan="4">
+                            <span class="w-100 btn btn-success"> Обновить заработок</span></td>
+                    </tr>
+                <?
+                endif ?>
+                </tbody>
+            </table>
+
         </div>
     </div>
     <div class="tab-pane fade" id="notes" role="tabpanel"
