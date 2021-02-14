@@ -1,6 +1,6 @@
 <?php
-
 $userId = $USER->GetID();
+$userGroup = CUser::GetUserGroup($userId);
 ?>
 <div>
 
@@ -9,11 +9,11 @@ $userId = $USER->GetID();
         <?php
         foreach ($arResult['ITEMS'] as $arItem): ?>
             <?php
-            if ($userId == '1' || $arItem['PROPERTIES']['MODEL_ID']['VALUE'] == $userId):?>
+            if (in_array(6, $userGroup) || $arItem['PROPERTIES']['MODEL_ID']['VALUE'] == $userId):?>
                 <a href="<?= $arItem['DETAIL_PAGE_URL'] ?>"
                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><?= $arItem['NAME'] ?>
                     <?
-                    if ($USER->GetID() == 1): ?>
+                    if (in_array(6, $userGroup)): ?>
                         <span class="btn btn-danger float-right d" data-id="<?= $arItem['ID'] ?>">Деактивировать</span>
                     <?
                     endif ?></a>
@@ -23,13 +23,16 @@ $userId = $USER->GetID();
         endforeach; ?>
     </div>
 </div>
+<?php
+if (in_array(6, $userGroup)):
+?>
 <div class="mt-5">
     <h2>Деактивированные модели:</h2>
     <div class="list-group">
         <?php
         foreach ($arResult['dM'] as $arItem): ?>
             <?php
-            if ($userId == '1'):?>
+            if (in_array(6, $userGroup)):?>
                 <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><?= $arItem['NAME'] ?>
                     <?
                     if ($USER->GetID() == 1): ?>
@@ -73,3 +76,5 @@ $userId = $USER->GetID();
         </div>
     </form>
 </div>
+<?php
+endif;

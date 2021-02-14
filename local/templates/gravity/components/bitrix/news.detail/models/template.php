@@ -1,3 +1,7 @@
+<?php
+$userId = $USER->GetID();
+$userGroup = CUser::GetUserGroup($userId);
+?>
 <div class="row">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -91,7 +95,7 @@
             endforeach; ?>
         </div>
         <?
-        if ($USER->GetID() == 1): ?>
+        if (in_array(6, $userGroup)): ?>
             <div class="row mt-2">
                 <div class="btn btn-success" id="add-login">Добавить логин</div>
                 <div class="btn btn-danger" id="edit-login">Редактировать логины</div>
