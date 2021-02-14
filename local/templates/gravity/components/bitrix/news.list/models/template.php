@@ -35,7 +35,7 @@ if (in_array(6, $userGroup)):
             if (in_array(6, $userGroup)):?>
                 <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><?= $arItem['NAME'] ?>
                     <?
-                    if ($USER->GetID() == 1): ?>
+                    if (in_array(6, $userGroup)): ?>
                         <span class="btn btn-success float-right a" data-id="<?= $arItem['ID'] ?>">Активировать</span>
                     <?
                     endif ?></a>
