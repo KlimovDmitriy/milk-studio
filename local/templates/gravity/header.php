@@ -27,10 +27,10 @@
             <div class="top_header_container">
                 <a href="/">
                     <div class="mobile_logo">
-                        <img src="<?= SITE_TEMPLATE_PATH; ?>/markup/img/logo.png" alt="Логотип">
+                        <img src="<?= SITE_TEMPLATE_PATH; ?>/images/aurum.jpg" alt="Логотип">
                     </div>
                     <div class="desktop_logo" style="width:20%">
-                        <img src="<?= SITE_TEMPLATE_PATH; ?>/markup/img/logo.png" alt="Логотип">
+                        <img src="<?= SITE_TEMPLATE_PATH; ?>/images/aurum.jpg" alt="Логотип">
                     </div>
                 </a>
                 <button type="button" class="btn btn-danger text-white"><a href="/?logout=yes" class="text-white">Выйти</a>

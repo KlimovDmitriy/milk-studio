@@ -13,8 +13,8 @@
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="logins" role="tabpanel"
          aria-labelledby="home-tab">
-        <div class="row">
-            <table class="table table-bordered table-striped">
+        <div class="row login-table">
+            <table class="table table-bordered table-striped ">
                 <thead class="thead-dark">
                 <tr>
                     <th>
@@ -29,7 +29,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($arResult['LOGINS'] as $login): ?>
+                <?php
+                foreach ($arResult['LOGINS'] as $login): ?>
                     <tr>
                         <td>
                             <?= $login['UF_SITE'] ?>
@@ -41,18 +42,65 @@
                             <?= $login['UF_PASSWORD'] ?>
                         </td>
                     </tr>
-                <?php endforeach; ?>
+                <?php
+                endforeach; ?>
                 </tbody>
             </table>
         </div>
-        <? if ($USER->GetID() == 1):?>
-        <div class="row">
-            <div class="btn btn-danger" id="add-login">Добавить логин</div>
+        <div class="login-edit mb-4">
+            <div class="row">
+                <div class="col-md-3">
+                    Сайт
+                </div>
+                <div class="col-md-3">
+                    Логин
+                </div>
+                <div class="col-md-3">
+                    Пароль
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-1">
+                </div>
+            </div>
+            <?php
+            foreach ($arResult['LOGINS'] as $login): ?>
+                <div class="row mt-1">
+                    <form class="w-100">
+                        <input type="hidden" name="id" value="<?= $login['ID']?>">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <input class="form-control" type="text" name="site" placeholder="Введите ник модели:" value="<?= $login['UF_SITE'] ?>">
+                            </div>
+                            <div class="col-md-3">
+                                <input class="form-control" type="text" name="login" placeholder="Введите ник модели:" value="<?= $login['UF_LOGIN'] ?>">
+                            </div>
+                            <div class="col-md-3">
+                                <input class="form-control" type="text" name="password" placeholder="Введите ник модели:" value="<?= $login['UF_PASSWORD'] ?>">
+                            </div>
+                            <div class="col-md-1">
+                                <div class="btn btn-success update-login">Обновить</div>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="btn btn-danger delete-login">Удалить</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            <?php
+            endforeach; ?>
         </div>
-        <? endif ?>
+        <?
+        if ($USER->GetID() == 1): ?>
+            <div class="row mt-2">
+                <div class="btn btn-success" id="add-login">Добавить логин</div>
+                <div class="btn btn-danger" id="edit-login">Редактировать логины</div>
+            </div>
+        <?
+        endif ?>
         <div class="row mt-4" id="login-form" style="display: none">
             <form class="d-flex align-items-end" id="add-login-form">
-                <input type="hidden" name="model-id" value="<?=$arResult['ID']?>">
+                <input type="hidden" name="model-id" value="<?= $arResult['ID'] ?>">
                 <div class="form-group mr-3">
                     <label for="site">Сайт</label>
                     <input type="text" class="form-control" name="site"/>

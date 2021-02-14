@@ -1,1 +1,0 @@
-<a href="tel:+78123177560" class="phone header_phone">+7 812 317-75-60</a>
