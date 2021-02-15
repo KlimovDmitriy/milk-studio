@@ -39,3 +39,9 @@ $arLoadProductArray = Array(
     "PREVIEW_TEXT"   => "",
     "DETAIL_TEXT"    => ""
 );
+
+if($PRODUCT_ID = $el->Add($arLoadProductArray))
+    echo "New ID: ".$PRODUCT_ID;
+else
+    echo "Error: ".$el->LAST_ERROR;
+?>
