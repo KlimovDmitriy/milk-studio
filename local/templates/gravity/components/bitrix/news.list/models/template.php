@@ -9,11 +9,11 @@ $userGroup = CUser::GetUserGroup($userId);
         <?php
         foreach ($arResult['ITEMS'] as $arItem): ?>
             <?php
-            if (in_array(6, $userGroup) || $arItem['PROPERTIES']['MODEL_ID']['VALUE'] == $userId):?>
+            if (in_array(1, $userGroup) || $arItem['PROPERTIES']['MODEL_ID']['VALUE'] == $userId):?>
                 <a href="<?= $arItem['DETAIL_PAGE_URL'] ?>"
                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><?= $arItem['NAME'] ?>
                     <?
-                    if (in_array(6, $userGroup)): ?>
+                    if (in_array(1, $userGroup)): ?>
                         <span class="btn btn-danger float-right d" data-id="<?= $arItem['ID'] ?>">Деактивировать</span>
                     <?
                     endif ?></a>
@@ -24,7 +24,7 @@ $userGroup = CUser::GetUserGroup($userId);
     </div>
 </div>
 <?php
-if (in_array(6, $userGroup)):
+if (in_array(1, $userGroup)):
 ?>
 <div class="mt-5">
     <h2>Деактивированные модели:</h2>
@@ -32,10 +32,10 @@ if (in_array(6, $userGroup)):
         <?php
         foreach ($arResult['dM'] as $arItem): ?>
             <?php
-            if (in_array(6, $userGroup)):?>
+            if (in_array(1, $userGroup)):?>
                 <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"><?= $arItem['NAME'] ?>
                     <?
-                    if (in_array(6, $userGroup)): ?>
+                    if (in_array(1, $userGroup)): ?>
                         <span class="btn btn-success float-right a" data-id="<?= $arItem['ID'] ?>">Активировать</span>
                     <?
                     endif ?></a>

@@ -21,7 +21,6 @@
 </head>
 <body>
 <? if ($USER->IsAuthorized()): ?>
-    <? $APPLICATION->ShowPanel(); ?>
     <header class="header">
         <div class="top_header">
             <div class="top_header_container">

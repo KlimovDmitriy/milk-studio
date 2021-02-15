@@ -101,7 +101,7 @@ $userGroup = CUser::GetUserGroup($userId);
             endforeach; ?>
         </div>
         <?
-        if (in_array(6, $userGroup)): ?>
+        if (in_array(1, $userGroup)): ?>
             <div class="row mt-2">
                 <div class="btn btn-success" id="add-login">Добавить логин</div>
                 <div class="btn btn-danger" id="edit-login">Редактировать логины</div>
@@ -136,7 +136,7 @@ $userGroup = CUser::GetUserGroup($userId);
                 <tr>
                     <td>Цель</td>
                     <td><?php
-                        if (in_array(6, $userGroup)): ?>
+                        if (in_array(1, $userGroup)): ?>
                             <input type="text" name='goal' value="<?= $arResult['PROPERTIES']['GOAL']['VALUE'] ?>">
                         <?php
                         else: ?>
@@ -146,7 +146,7 @@ $userGroup = CUser::GetUserGroup($userId);
                     <td>Заработок по <?= $arResult['PROPERTIES']['DATE_UPDATE']['VALUE'] ?></td>
                     <td>
                         <?php
-                        if (in_array(6, $userGroup)): ?>
+                        if (in_array(1, $userGroup)): ?>
                             <input type="text" name='salary' value="<?= $arResult['PROPERTIES']['SALARY']['VALUE'] ?>">
                         <?php
                         else: ?>
@@ -155,7 +155,7 @@ $userGroup = CUser::GetUserGroup($userId);
                         endif ?></td>
                 </tr>
                 <?php
-                if (in_array(6, $userGroup)): ?>
+                if (in_array(1, $userGroup)): ?>
                     <tr class="" id="update-salary">
                         <td colspan="4">
                             <span class="w-100 btn btn-success"> Обновить заработок</span></td>
