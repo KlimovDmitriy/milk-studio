@@ -10,8 +10,12 @@ $userGroup = CUser::GetUserGroup($userId);
                aria-selected="true">Логины и заработок</a>
         </li>
         <li class="nav-item" role="presentation">
-            <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#notes" role="tab" aria-controls="profile"
+            <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#notes" role="tab" aria-controls="notes"
                aria-selected="false">Заметки</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#archive" role="tab" aria-controls="archive"
+               aria-selected="false">История</a>
         </li>
     </ul>
 </div>
@@ -191,6 +195,37 @@ $userGroup = CUser::GetUserGroup($userId);
                 <button type="button" class="btn btn-warning" id="update-note">Обновить заметки</button>
             </div>
         </div>
+    </div>
+    <div class="tab-pane fade" id="archive" role="tabpanel"
+         aria-labelledby="profile-tab">
+        <div class="row mt-3 note-wrapper" id='arc-table'>
+            <?= $arResult['PROPERTIES']['ARCHIVE']['~VALUE']['TEXT']?>
+        </div>
+        <?php if (in_array(1, $userGroup)): ?>
+        <div class="row note-btn-wrapper mt-3">            
+                <button type="button" class="btn btn-warning" id="update-archive">Обновить заработки</button>            
+        </div>
+        <div class="row mt-4" id="archive-form" style="display: none">
+            <form class="d-flex align-items-end" id="update-archive-form">
+                <input type="hidden" name="model-id" value="<?= $arResult['ID'] ?>">
+                <div class="form-group mr-3">
+                    <label for="period">Период</label>
+                    <input type="text" class="form-control" name="period"/>
+                </div>
+                <div class="form-group mr-3">
+                    <label for="earning">Заработок</label>
+                    <input type="text" class="form-control" name="earning"/>
+                </div>
+                <div class="form-group mr-3">
+                    <label for="percent">%</label>
+                    <input type="text" class="form-control" name="percent"/>
+                </div>
+                <div class="form-group">
+                    <div class="btn btn-warning" id="archive-submit">Сохранить</div>
+                </div>
+            </form>
+        </div>
+        <?php endif; ?>
     </div>
 </div>
 

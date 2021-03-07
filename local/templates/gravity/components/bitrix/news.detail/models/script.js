@@ -63,4 +63,28 @@ $(document).ready(function(){
             }
         })
     })
+
+    $("#update-archive").click(function(){
+        $("#archive-form").toggle();
+    })
+
+    $("#archive-submit").click(function(){
+        var form = $("#update-archive-form");
+        var percent = $(form).find("input[name='percent']").val();
+        var period = $(form).find("input[name='period']").val();
+        var earning = $(form).find("input[name='earning']").val();
+        var id = $(form).find("input[name='model-id']").val();
+        var tableRow = "<tr><td>"+period+"</td><td>"+earning+"</td><td>"+percent+"</td></tr>"
+        $(".archive-body").append(tableRow);
+        var table = $("#arc-table").html();
+        console.log(table);
+        $.ajax({
+            url: '/ajax/update-archive.php',
+            type: 'POST',
+            data: {table: table, id: id},
+            success: function (){
+                console.log('Добавлено');
+            }
+        })
+    })
 })
