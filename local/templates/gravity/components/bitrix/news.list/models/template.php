@@ -2,6 +2,42 @@
 $userId = $USER->GetID();
 $userGroup = CUser::GetUserGroup($userId);
 ?>
+<?php
+if (in_array(1, $userGroup)):
+?>
+<div class="my-5">
+    <h2>Добавление модели:</h2>
+    <form id="add_model">
+        <input type="hidden" value="<?= $USER->GetID() ?>" name="who_add">
+        <div class="row">
+            <div class="col">
+                <label for="login">Логин модели:</label>
+                <input class="form-control" type="text" name="login" placeholder="Введите логин:">
+            </div>
+            <div class="col">
+                <label for="password">Пароль модели:</label>
+                <input class="form-control" type="text" name="password" placeholder="Введите пароль:">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <label for="name">Ник модели:</label>
+                <input class="form-control" type="text" name="name" placeholder="Введите ник модели:">
+            </div>
+            <div class="col">
+                <label for="surname">Фамилия модели:</label>
+                <input class="form-control" type="text" name="surname" placeholder="Введите фамилию модели:">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col btn btn-success" id="submit_model">
+                Добавить
+            </div>
+        </div>
+    </form>
+</div>
+<?php
+endif;?>
 <div>
 
     <h2>Активные модели:</h2>
@@ -44,37 +80,6 @@ if (in_array(1, $userGroup)):
         <?php
         endforeach; ?>
     </div>
-</div>
-<div class="mt-5">
-    <h2>Добавление модели:</h2>
-    <form id="add_model">
-        <input type="hidden" value="<?= $USER->GetID() ?>" name="who_add">
-        <div class="row">
-            <div class="col">
-                <label for="login">Логин модели:</label>
-                <input class="form-control" type="text" name="login" placeholder="Введите логин:">
-            </div>
-            <div class="col">
-                <label for="password">Пароль модели:</label>
-                <input class="form-control" type="text" name="password" placeholder="Введите пароль:">
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col">
-                <label for="name">Ник модели:</label>
-                <input class="form-control" type="text" name="name" placeholder="Введите ник модели:">
-            </div>
-            <div class="col">
-                <label for="surname">Фамилия модели:</label>
-                <input class="form-control" type="text" name="surname" placeholder="Введите фамилию модели:">
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col btn btn-success" id="submit_model">
-                Добавить
-            </div>
-        </div>
-    </form>
 </div>
 <?php
 endif;
