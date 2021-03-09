@@ -11,7 +11,6 @@ $APPLICATION->SetAdditionalCSS(SITE_TEMPLATE_PATH . '/css/404_main.css'); ?>
             <div class="container">
                 <h1 class="section_title">Страница <span>не найдена</span></h1>
                 <div class="flex_container flex_container_row">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/markup/img/404_background.png" class="section_background" alt="Фоновое изображение">
                     <div class="flex_container flex_container_column">
                         <p class="section_subtitle"><span>Сожалеем,</span> <span>данная страница недоступна,</span> либо
                             находится в разработке.</p>
