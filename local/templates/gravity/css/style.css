@@ -298,7 +298,8 @@ footer .addr {
 
 .top_header {
 	width: 100%;
-	background-color: #07569e;
+	background: rgb(177,175,189);
+	background: linear-gradient(345deg, rgba(177,175,189,1) 0%, rgba(118,73,42,1) 50%, rgba(177,175,189,1) 100%);
 }
 .top_header_container {
 	display: flex;
